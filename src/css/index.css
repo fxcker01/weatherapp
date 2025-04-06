@@ -3,12 +3,14 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background: #121212;
     font-family: 'Inter', sans-serif;
     color: #ffd15b;
+    padding: 20px;
 }
 
 .sun {
@@ -24,9 +26,10 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 200px;
+    padding: 0 20px;
 }
 
-.main>div {
+.main > div {
     width: 500px;
 }
 
@@ -41,7 +44,8 @@ form input::placeholder {
 }
 
 form input {
-    width: 200px;
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 20px;
     display: block;
     border: 3px solid transparent;
@@ -55,7 +59,7 @@ form input {
 }
 
 form input:focus {
-    border-radius: #c5910e;
+    border-color: #c5910e;
 }
 
 form button,
@@ -81,7 +85,8 @@ form button:hover {
     margin-bottom: 20px;
     background: #979797;
     padding: 20px;
-    width: 170px;
+    width: 100%;
+    max-width: 250px;
     color: #454545;
 }
 
@@ -105,4 +110,57 @@ form button:hover {
     background: #9b1414;
     color: #330404;
     transform: translateY(-5px);
+}
+
+/* 🌐 Responsive styles */
+@media (max-width: 768px) {
+    .main {
+        margin-top: 150px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .main > div {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sun {
+        width: 150px;
+        height: 150px;
+        top: -30px;
+        left: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    form input {
+        max-width: 100%;
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    .city {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .city img {
+        width: 50px;
+        height: 50px;
+        top: -20px;
+        right: -20px;
+    }
+
+    .sun {
+        width: 100px;
+        height: 100px;
+        top: -20px;
+        left: -20px;
+    }
 }
