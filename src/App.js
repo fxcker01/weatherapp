@@ -33,7 +33,7 @@ function App() {
   }
 
   return (<div className='main'>
-    <img src={sun} className='sun' />
+    <img src={sun} className='sun' alt="sun icon"/>
     <Form getWeather={getWeather}/>
     <Weather cities={cities} deleteWeather={deleteWeather} />
   </div>)
